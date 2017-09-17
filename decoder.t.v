@@ -7,7 +7,7 @@ module testDecoder ();
     reg enable;
     wire out0,out1,out2,out3;
 
-    behavioralDecoder decoder (out0,out1,out2,out3,addr0,addr1,enable);
+    structuralDecoder decoder (out0,out1,out2,out3,addr0,addr1,enable);
     //structuralDecoder decoder (out0,out1,out2,out3,addr0,addr1,enable); // Swap after testing
 
     initial begin
