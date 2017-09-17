@@ -1,4 +1,8 @@
 // Decoder circuit
+`define AND and #50
+`define OR or #50
+`define NOT not #50
+`define XOR xor #50
 
 module behavioralDecoder
 (
@@ -23,14 +27,14 @@ module structuralDecoder
 	wire nAB;
 	wire AnB;
 	wire nAnB;
-    not aInv(nA, A);
-    not bInv(nB, B);
-    and a1(nAnB, nA, nB);
-    and a2(AnB, A, nB);
-    and a3(nAB, nA, B);
-    and a4(AB, A, B);
-    and o1(out0, enable, nAnB);
-    and o2(out1, enable, AnB);
-    and o3(out2, enable, nAB);
-    and o4(out3, enable, AB);
+    `NOT(nA, A);
+    `NOT(nB, B);
+    `AND(nAnB, nA, nB);
+    `AND(AnB, A, nB);
+    `AND(nAB, nA, B);
+    `AND(AB, A, B);
+    `AND(out0, enable, nAnB);
+    `AND(out1, enable, AnB);
+    `AND(out2, enable, nAB);
+    `AND(out3, enable, AB);
 endmodule

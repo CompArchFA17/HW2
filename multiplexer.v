@@ -28,20 +28,20 @@ module structuralMultiplexer
     wire or1;
     wire or2;
     wire o0, o1, o2, o3;
-    not aInv(nA, A);
-    not bInv(nB, B);
-    and a1(nAnB, nA, nB);
-    and a2(AnB, A, nB);
-    and a3(nAB, nA, B);
-    and a4(AB, A, B);
-    and i1(o0, in0, nAnB);
-    and i2(o1, in1, AnB);
-    and i3(o2, in2, nAB);
-    and i4(o3, in3, AB);
+    not(nA, A);
+    not(nB, B);
+    and(nAnB, nA, nB);
+    and(AnB, A, nB);
+    and(nAB, nA, B);
+    and(AB, A, B);
+    and(o0, in0, nAnB);
+    and(o1, in1, AnB);
+    and(o2, in2, nAB);
+    and(o3, in3, AB);
 
-    or o1(or1, o0, o1);
-    or o2(or2, o2, o3);
-    or inall(out, or1, or2);
+    or(or1, o0, o1);
+    or(or2, o2, o3);
+    or(out, or1, or2);
 
 endmodule
 
