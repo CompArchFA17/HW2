@@ -1,0 +1,106 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x22759a0 .scope module, "behavioralMultiplexer" "behavioralMultiplexer" 2 3;
+ .timescale -9 -12;
+v0x2298670_0 .net "address", 1 0, L_0x22b4750; 1 drivers
+v0x22b2ca0_0 .net "address0", 0 0, C4<z>; 0 drivers
+v0x22b2d40_0 .net "address1", 0 0, C4<z>; 0 drivers
+v0x22b2de0_0 .net "in0", 0 0, C4<z>; 0 drivers
+v0x22b2e90_0 .net "in1", 0 0, C4<z>; 0 drivers
+v0x22b2f30_0 .net "in2", 0 0, C4<z>; 0 drivers
+v0x22b3010_0 .net "in3", 0 0, C4<z>; 0 drivers
+v0x22b30b0_0 .net "inputs", 3 0, L_0x22b4590; 1 drivers
+v0x22b31a0_0 .net "out", 0 0, L_0x22b4880; 1 drivers
+L_0x22b4590 .concat [ 1 1 1 1], C4<z>, C4<z>, C4<z>, C4<z>;
+L_0x22b4750 .concat [ 1 1 0 0], C4<z>, C4<z>;
+L_0x22b4880 .part/v L_0x22b4590, L_0x22b4750, 1;
+S_0x2275010 .scope module, "testMultiplexer" "testMultiplexer" 3 5;
+ .timescale -9 -12;
+v0x22b4120_0 .var "addr0", 0 0;
+v0x22b41a0_0 .var "addr1", 0 0;
+v0x22b4220_0 .var "in0", 0 0;
+v0x22b42d0_0 .var "in1", 0 0;
+v0x22b43b0_0 .var "in2", 0 0;
+v0x22b4460_0 .var "in3", 0 0;
+v0x22b44e0_0 .net "out", 0 0, L_0x22b5200; 1 drivers
+S_0x22b3240 .scope module, "mux" "structuralMultiplexer" 3 11, 2 16, S_0x2275010;
+ .timescale -9 -12;
+L_0x22b39a0 .functor NOT 1, v0x22b4120_0, C4<0>, C4<0>, C4<0>;
+L_0x22b49f0 .functor NOT 1, v0x22b41a0_0, C4<0>, C4<0>, C4<0>;
+L_0x22b4aa0 .functor AND 1, L_0x22b39a0, L_0x22b49f0, C4<1>, C4<1>;
+L_0x22b4ba0 .functor AND 1, v0x22b4120_0, L_0x22b49f0, C4<1>, C4<1>;
+L_0x22b4c00 .functor AND 1, L_0x22b39a0, v0x22b41a0_0, C4<1>, C4<1>;
+L_0x22b4c60 .functor AND 1, v0x22b4120_0, v0x22b41a0_0, C4<1>, C4<1>;
+L_0x22b4e50 .functor AND 1, v0x22b4220_0, L_0x22b4aa0, C4<1>, C4<1>;
+L_0x22b4eb0 .functor AND 1, v0x22b42d0_0, L_0x22b4ba0, C4<1>, C4<1>;
+L_0x22b5000 .functor AND 1, v0x22b43b0_0, L_0x22b4c00, C4<1>, C4<1>;
+L_0x22b5100 .functor AND 1, v0x22b4460_0, L_0x22b4c60, C4<1>, C4<1>;
+L_0x22b5260 .functor OR 1, L_0x22b4e50, L_0x22b4eb0, C4<0>, C4<0>;
+L_0x22b5310 .functor OR 1, L_0x22b5000, L_0x22b5100, C4<0>, C4<0>;
+L_0x22b5200 .functor OR 1, L_0x22b5260, L_0x22b5310, C4<0>, C4<0>;
+v0x22b3330_0 .net "A", 0 0, v0x22b4120_0; 1 drivers
+v0x22b33f0_0 .net "AB", 0 0, L_0x22b4c60; 1 drivers
+v0x22b3490_0 .net "AnB", 0 0, L_0x22b4ba0; 1 drivers
+v0x22b3530_0 .net "B", 0 0, v0x22b41a0_0; 1 drivers
+v0x22b35b0_0 .net "in0", 0 0, v0x22b4220_0; 1 drivers
+v0x22b3650_0 .net "in1", 0 0, v0x22b42d0_0; 1 drivers
+v0x22b36f0_0 .net "in2", 0 0, v0x22b43b0_0; 1 drivers
+v0x22b3790_0 .net "in3", 0 0, v0x22b4460_0; 1 drivers
+v0x22b3880_0 .net "nA", 0 0, L_0x22b39a0; 1 drivers
+v0x22b3920_0 .net "nAB", 0 0, L_0x22b4c00; 1 drivers
+v0x22b3a20_0 .net "nAnB", 0 0, L_0x22b4aa0; 1 drivers
+v0x22b3ac0_0 .net "nB", 0 0, L_0x22b49f0; 1 drivers
+v0x22b3bd0_0 .net "o0", 0 0, L_0x22b4e50; 1 drivers
+v0x22b3c70_0 .net "o1", 0 0, L_0x22b4eb0; 1 drivers
+v0x22b3d90_0 .net "o2", 0 0, L_0x22b5000; 1 drivers
+v0x22b3e30_0 .net "o3", 0 0, L_0x22b5100; 1 drivers
+v0x22b3cf0_0 .net "or1", 0 0, L_0x22b5260; 1 drivers
+v0x22b3f80_0 .net "or2", 0 0, L_0x22b5310; 1 drivers
+v0x22b40a0_0 .alias "out", 0 0, v0x22b44e0_0;
+    .scope S_0x2275010;
+T_0 ;
+    %vpi_call 3 14 "$display", "A0 A1| in0 in1 in2 in3 | Out | Expected Output";
+    %set/v v0x22b4220_0, 1, 1;
+    %set/v v0x22b42d0_0, 0, 1;
+    %set/v v0x22b43b0_0, 0, 1;
+    %set/v v0x22b4460_0, 0, 1;
+    %set/v v0x22b4120_0, 0, 1;
+    %set/v v0x22b41a0_0, 0, 1;
+    %delay 1000000, 0;
+    %vpi_call 3 16 "$display", "%b  %b  | %b  %b  %b  %b  |  %b  | 1", v0x22b4120_0, v0x22b41a0_0, v0x22b4220_0, v0x22b42d0_0, v0x22b43b0_0, v0x22b4460_0, v0x22b44e0_0;
+    %set/v v0x22b4220_0, 0, 1;
+    %set/v v0x22b42d0_0, 1, 1;
+    %set/v v0x22b43b0_0, 0, 1;
+    %set/v v0x22b4460_0, 0, 1;
+    %set/v v0x22b4120_0, 1, 1;
+    %set/v v0x22b41a0_0, 0, 1;
+    %delay 1000000, 0;
+    %vpi_call 3 18 "$display", "%b  %b  | %b  %b  %b  %b  |  %b  | 1", v0x22b4120_0, v0x22b41a0_0, v0x22b4220_0, v0x22b42d0_0, v0x22b43b0_0, v0x22b4460_0, v0x22b44e0_0;
+    %set/v v0x22b4220_0, 0, 1;
+    %set/v v0x22b42d0_0, 0, 1;
+    %set/v v0x22b43b0_0, 1, 1;
+    %set/v v0x22b4460_0, 0, 1;
+    %set/v v0x22b4120_0, 0, 1;
+    %set/v v0x22b41a0_0, 1, 1;
+    %delay 1000000, 0;
+    %vpi_call 3 20 "$display", "%b  %b  | %b  %b  %b  %b  |  %b  | 1", v0x22b4120_0, v0x22b41a0_0, v0x22b4220_0, v0x22b42d0_0, v0x22b43b0_0, v0x22b4460_0, v0x22b44e0_0;
+    %set/v v0x22b4220_0, 0, 1;
+    %set/v v0x22b42d0_0, 0, 1;
+    %set/v v0x22b43b0_0, 0, 1;
+    %set/v v0x22b4460_0, 1, 1;
+    %set/v v0x22b4120_0, 1, 1;
+    %set/v v0x22b41a0_0, 1, 1;
+    %delay 1000000, 0;
+    %vpi_call 3 22 "$display", "%b  %b  | %b  %b  %b  %b  |  %b  | 1", v0x22b4120_0, v0x22b41a0_0, v0x22b4220_0, v0x22b42d0_0, v0x22b43b0_0, v0x22b4460_0, v0x22b44e0_0;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "./multiplexer.v";
+    "multiplexer.t.v";
