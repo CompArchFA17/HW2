@@ -8,9 +8,10 @@ module testMultiplexer ();
   reg in0, in1, in2, in3;
 
   structuralMultiplexer multiplexer (out,addr0,addr1,in0,in1,in2,in3);
-  $dumpfile()
   initial begin
-    // test when all wires are 0
+    $dumpfile("../resources/mux.vcd");
+    $dumpvars;
+
     $display("A0 A1 | I0 I1 I2 I3 | Out | Expected Behaviour");
     addr0=0;addr1=0;in0=0;in1=0;in2=0;in3=0; #1000
     $display("%b  %b  | %b  %b  %b  %b  |  %b  | I0 Only (low)", addr0, addr1, in0, in1, in2, in3, out);

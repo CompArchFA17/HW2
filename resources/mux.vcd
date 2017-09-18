@@ -1,0 +1,194 @@
+$date
+	Sun Sep 17 21:08:56 2017
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testMultiplexer $end
+$var wire 1 ! out $end
+$var reg 1 " addr0 $end
+$var reg 1 # addr1 $end
+$var reg 1 $ in0 $end
+$var reg 1 % in1 $end
+$var reg 1 & in2 $end
+$var reg 1 ' in3 $end
+$scope module multiplexer $end
+$var wire 1 ( a0 $end
+$var wire 1 ) a1 $end
+$var wire 1 * b0 $end
+$var wire 1 + b1 $end
+$var wire 1 , b2 $end
+$var wire 1 - b3 $end
+$var wire 1 . in0 $end
+$var wire 1 / in1 $end
+$var wire 1 0 in2 $end
+$var wire 1 1 in3 $end
+$var wire 1 2 m0 $end
+$var wire 1 3 m1 $end
+$var wire 1 4 m2 $end
+$var wire 1 5 m3 $end
+$var wire 1 6 n0 $end
+$var wire 1 7 n1 $end
+$var wire 1 ! out $end
+$scope module decoder $end
+$var wire 1 8 _a0 $end
+$var wire 1 9 _a1 $end
+$var wire 1 ( a0 $end
+$var wire 1 ) a1 $end
+$var wire 1 : enable $end
+$var wire 1 * o0 $end
+$var wire 1 + o1 $end
+$var wire 1 , o2 $end
+$var wire 1 - o3 $end
+$var wire 1 ; p0 $end
+$var wire 1 < p1 $end
+$var wire 1 = p2 $end
+$var wire 1 > p3 $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+z>
+z=
+z<
+x;
+1:
+z9
+z8
+x7
+x6
+z5
+z4
+z3
+z2
+01
+00
+0/
+0.
+x-
+x,
+x+
+x*
+0)
+0(
+0'
+0&
+0%
+0$
+0#
+0"
+x!
+$end
+#50000
+0>
+0=
+0<
+05
+04
+03
+02
+18
+19
+#100000
+0-
+0,
+0+
+07
+06
+1;
+#150000
+0!
+1*
+#1000000
+1$
+1.
+#1050000
+12
+#1100000
+16
+#1150000
+1!
+#2000000
+0$
+0.
+1"
+1(
+#2050000
+02
+08
+1<
+#2100000
+06
+0;
+1+
+#2150000
+0!
+0*
+#3000000
+1%
+1/
+#3050000
+13
+#3100000
+16
+#3150000
+1!
+#4000000
+0%
+0/
+1#
+1)
+0"
+0(
+#4050000
+03
+09
+18
+0<
+#4100000
+06
+1=
+0+
+#4150000
+0!
+1,
+#5000000
+1&
+10
+#5050000
+14
+#5100000
+17
+#5150000
+1!
+#6000000
+0&
+00
+1"
+1(
+#6050000
+04
+08
+1>
+#6100000
+07
+0=
+1-
+#6150000
+0!
+0,
+#7000000
+1'
+11
+#7050000
+15
+#7100000
+17
+#7150000
+1!
+#8000000

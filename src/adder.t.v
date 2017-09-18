@@ -9,6 +9,9 @@ module testFullAdder();
     structuralFullAdder adder (sum, carryout, a, b, carryin);
 
     initial begin
+      $dumpfile("../resources/adder.vcd");
+      $dumpvars;
+
       $display("A B Cin | Cout Sum ");
       a=0;b=0;carryin=0; #1000;
       $display("%b %b  %b  |  %b   %b", a, b, carryin, carryout, sum);
