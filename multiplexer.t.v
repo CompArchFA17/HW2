@@ -7,7 +7,7 @@ module testMultiplexer ();
   reg addr0, addr1;
   reg in0, in1, in2, in3;
 
-  behavioralMultiplexer multiplexer (out,addr0,addr1,in0,in1,in2,in3);
+  structuralMultiplexer multiplexer (out,addr0,addr1,in0,in1,in2,in3);
 
   initial begin
     // test when all wires are 0

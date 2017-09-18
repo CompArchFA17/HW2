@@ -12,7 +12,7 @@ module structuralDecoder
     input enable
 );
     wire _a0, _a1;
-    wire p0, p1, p2, p3, p4;
+    wire p0, p1, p2, p3;
     `NOT(_a0, a0);
     `NOT(_a1, a1);
     `AND(p0, _a0, _a1);
