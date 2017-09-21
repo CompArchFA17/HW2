@@ -39,21 +39,21 @@ module structuralMultiplexer
     wire out01;
     wire out23;
 
-    NOT A0inv(nA0, address0);
-    NOT A1inv(nA1, address1);
+    `NOT A0inv(nA0, address0);
+    `NOT A1inv(nA1, address1);
 
-    AND nA0andnA1(isenabled0, nA0, nA1);
-    AND A0andnA1(isenabled1, address0, nA1);
-    AND nA0andA1(isenabled2, nA0, address1);
-    AND A0andA1(isenabled3, address0, address1);
+    `AND nA0andnA1(isenabled0, nA0, nA1);
+    `AND A0andnA1(isenabled1, address0, nA1);
+    `AND nA0andA1(isenabled2, nA0, address1);
+    `AND A0andA1(isenabled3, address0, address1);
 
-    AND choose0(enablein0, isenabled0, in0);
-    AND choose1(enablein1, isenabled1, in1);
-    AND choose2(enablein2, isenabled2, in2);
-    AND choose3(enablein3, isenabled3, in3);
+    `AND choose0(enablein0, isenabled0, in0);
+    `AND choose1(enablein1, isenabled1, in1);
+    `AND choose2(enablein2, isenabled2, in2);
+    `AND choose3(enablein3, isenabled3, in3);
 
-    OR in0orin1(out01, enablein0, enablein1);
-    OR in2orin3(out23, enablein2, enablein3);
-    OR finalout(out, out01, out23);
+    `OR in0orin1(out01, enablein0, enablein1);
+    `OR in2orin3(out23, enablein2, enablein3);
+    `OR finalout(out, out01, out23);
 endmodule
 

@@ -2,6 +2,7 @@
 
 `define AND and #50
 `define XOR xor #50
+`define OR or #50
 
 module behavioralFullAdder
 (
@@ -27,11 +28,11 @@ module structuralFullAdder
     wire cout2;
     wire sumAB;
 
-    xor AxorB(sumAB, a, b);
-    xor sumABxorCin(sum, sumAB, carryin);
+    `XOR AxorB(sumAB, a, b);
+    `XOR sumABxorCin(sum, sumAB, carryin);
 
-    and AandB(cout1, a, b);
-    and sumABandCin(cout2, sumAB, carryin);
+    `AND AandB(cout1, a, b);
+    `AND sumABandCin(cout2, sumAB, carryin);
 
-    or orcarries(carryout, cout1, cout2);
+    `OR orcarries(carryout, cout1, cout2);
 endmodule
