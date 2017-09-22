@@ -12,9 +12,9 @@ Results:
 
 ![Truth table results for a Multiplexer](https://github.com/KaitlynKeil/HW2/blob/master/mult_table.png "Multiplexer Truth Table Results")
 
-The doubling up (all but one false, all true) was to demonstrate that it doesn't matter what the extraneous inputs are once the selectors have chosen the desired input.
-
 Wave results:
+
+The red indicates that it does not matter which state those inputs are in.
 
 ![GTK-Wave results for a Multiplexer](https://github.com/KaitlynKeil/HW2/blob/master/mult_wave.png "Multiplexer GTK-Wave Results")
 

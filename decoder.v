@@ -1,9 +1,9 @@
 // Decoder circuit
 
 // define gates with delays
-`define AND and #50
-`define OR or #50
-`define NOT not #50
+`define AND and #100
+`define OR or #100
+`define NOT not #100
 
 module behavioralDecoder
 (
