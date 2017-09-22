@@ -46,23 +46,23 @@ module testMultiplexer ();
     $display("A0 A1| I3 I2 I1 I0 | Output | Expected Output");
     address0=0; address1 = 0; in0=1; in1 = 0; in2 = 0; in3 = 0; #1000 
     $display("%b  %b |  %b  %b  %b  %b | %b | I0", address1, address0, in3, in2, in1, in0, structuralOut);
-    address0=0; address1 = 0; in0=1'bX; in1 = 0; in2 = 0; in3 = 0; #1000 
-    $display("%b  %b |  %b  %b  %b  %b | %b | I0", address1, address0, in3, in2, in1, in0, structuralOut);
+    //address0=0; address1 = 0; in0=1'bX; in1 = 0; in2 = 0; in3 = 0; #1000 
+    //$display("%b  %b |  %b  %b  %b  %b | %b | I0", address1, address0, in3, in2, in1, in0, structuralOut);
 
     address0=1; address1 = 0; in0=0; in1 = 1; in2 = 0; in3 = 0; #1000 
 	$display("%b  %b |  %b  %b  %b  %b | %b | I1", address1, address0, in3, in2, in1, in0, structuralOut);
-    address0=1; address1 = 0; in0=0; in1 = 1'bX; in2 = 0; in3 = 0; #1000 
-    $display("%b  %b |  %b  %b  %b  %b | %b | I1", address1, address0, in3, in2, in1, in0, structuralOut);
+    //address0=1; address1 = 0; in0=0; in1 = 1'bX; in2 = 0; in3 = 0; #1000 
+    //$display("%b  %b |  %b  %b  %b  %b | %b | I1", address1, address0, in3, in2, in1, in0, structuralOut);
     
 	address0=0; address1 = 1; in0=0; in1 = 0; in2 = 1; in3 = 0; #1000 
 	$display("%b  %b |  %b  %b  %b  %b | %b | I2", address1, address0, in3, in2, in1, in0, structuralOut);
-    address0=0; address1 = 1; in0=0; in1 = 0; in2 = 1'bX; in3 = 0; #1000 
-    $display("%b  %b |  %b  %b  %b  %b | %b | I2", address1, address0, in3, in2, in1, in0, structuralOut);
+    //address0=0; address1 = 1; in0=0; in1 = 0; in2 = 1'bX; in3 = 0; #1000 
+    //$display("%b  %b |  %b  %b  %b  %b | %b | I2", address1, address0, in3, in2, in1, in0, structuralOut);
 
     address0=1; address1 = 1; in0=0; in1 = 0; in2 = 0; in3 = 1; #1000 
 	$display("%b  %b |  %b  %b  %b  %b | %b | I3", address1, address0, in3, in2, in1, in0, structuralOut);
-    address0=1; address1 = 1; in0=0; in1 = 0; in2 = 0; in3 = 1'bX; #1000 
-    $display("%b  %b |  %b  %b  %b  %b | %b | I3", address1, address0, in3, in2, in1, in0, structuralOut);
+    //address0=1; address1 = 1; in0=0; in1 = 0; in2 = 0; in3 = 1'bX; #1000 
+    //$display("%b  %b |  %b  %b  %b  %b | %b | I3", address1, address0, in3, in2, in1, in0, structuralOut);
 	end
 
 endmodule
