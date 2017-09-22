@@ -1,5 +1,11 @@
 // Adder circuit
 
+// define gates with delays
+`define AND and #50
+`define OR or #50
+`define XOR xor #50
+`define NOT not #50
+
 module behavioralFullAdder
 (
     output sum, 
@@ -20,5 +26,14 @@ module structuralFullAdder
     input b, 
     input carryin
 );
-    // Your adder code here
+
+    wire ab;
+    `XOR aXORb(ab, a, b);
+    `XOR abXORc(sum, ab, carryin);
+
+    wire aAndb, oneAndC;
+    `AND aANDb(aAndb, a, b);
+    `AND aXORbANDc(oneAndC, ab, carryin);
+    `OR aorborc(carryout, aAndb, oneAndC);
+    
 endmodule
