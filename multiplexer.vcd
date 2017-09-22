@@ -1,0 +1,306 @@
+$date
+	Thu Sep 21 19:54:33 2017
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testMultiplexer $end
+$var wire 2 ! address [1:0] $end
+$var wire 4 " inputs [3:0] $end
+$var wire 1 # out $end
+$var wire 1 $ structuralOut $end
+$var reg 1 % address0 $end
+$var reg 1 & address1 $end
+$var reg 1 ' in0 $end
+$var reg 1 ( in1 $end
+$var reg 1 ) in2 $end
+$var reg 1 * in3 $end
+$scope module multiplexer $end
+$var wire 2 + address [1:0] $end
+$var wire 1 , address0 $end
+$var wire 1 - address1 $end
+$var wire 1 . in0 $end
+$var wire 1 / in1 $end
+$var wire 1 0 in2 $end
+$var wire 1 1 in3 $end
+$var wire 4 2 inputs [3:0] $end
+$var wire 1 # out $end
+$upscope $end
+$scope module structural $end
+$var wire 1 3 I0A0 $end
+$var wire 1 4 I0A1 $end
+$var wire 1 5 I1A0 $end
+$var wire 1 6 I1A1 $end
+$var wire 1 7 I2A0 $end
+$var wire 1 8 I2A1 $end
+$var wire 1 9 I3A0 $end
+$var wire 1 : I3A1 $end
+$var wire 1 , address0 $end
+$var wire 1 - address1 $end
+$var wire 1 . in0 $end
+$var wire 1 / in1 $end
+$var wire 1 0 in2 $end
+$var wire 1 1 in3 $end
+$var wire 1 ; naddress0 $end
+$var wire 1 < naddress1 $end
+$var wire 1 $ structuralOut $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+z<
+z;
+z:
+z9
+z8
+z7
+x6
+z5
+x4
+x3
+b1 2
+01
+00
+0/
+1.
+0-
+0,
+b0 +
+0*
+0)
+0(
+1'
+0&
+0%
+z$
+1#
+b1 "
+b0 !
+$end
+#50000
+x$
+0:
+09
+08
+07
+05
+1;
+1<
+#100000
+13
+06
+#150000
+14
+#200000
+1$
+#1000000
+1(
+1/
+0'
+b10 "
+0.
+b10 2
+1%
+b1 !
+1,
+1#
+b1 +
+#1050000
+03
+0;
+15
+#1100000
+04
+16
+#2000000
+1)
+10
+0(
+b100 "
+0/
+b100 2
+1&
+1-
+0%
+b10 !
+0,
+1#
+b10 +
+#2050000
+0<
+1;
+05
+#2100000
+17
+06
+#2150000
+18
+0$
+#2200000
+1$
+#3000000
+1*
+11
+0)
+b1000 "
+00
+b1000 2
+1%
+b11 !
+1,
+1#
+b11 +
+#3050000
+07
+0;
+19
+#3100000
+08
+1:
+#4000000
+0*
+01
+1'
+b1 "
+1.
+b1 2
+0&
+0-
+0%
+b0 !
+0,
+1#
+b0 +
+#4050000
+1<
+0:
+1;
+09
+#4100000
+0$
+13
+#4150000
+14
+#4200000
+1$
+#5000000
+x'
+b0x "
+x.
+x#
+b0x 2
+#5050000
+x3
+#5100000
+x4
+#5150000
+x$
+#6000000
+1(
+1/
+0'
+b10 "
+0.
+b10 2
+1%
+b1 !
+1,
+1#
+b1 +
+#6050000
+03
+0;
+15
+#6100000
+04
+16
+#6150000
+1$
+#7000000
+x(
+b0x0 "
+x/
+x#
+b0x0 2
+#7050000
+x5
+#7100000
+x6
+#7150000
+x$
+#8000000
+1)
+10
+0(
+b100 "
+0/
+b100 2
+1&
+1-
+0%
+b10 !
+0,
+1#
+b10 +
+#8050000
+0<
+1;
+05
+#8100000
+17
+06
+#8150000
+18
+0$
+#8200000
+1$
+#9000000
+x)
+b0x00 "
+x0
+x#
+b0x00 2
+#9050000
+x7
+#9100000
+x8
+#9150000
+x$
+#10000000
+1*
+11
+0)
+b1000 "
+00
+b1000 2
+1%
+b11 !
+1,
+1#
+b11 +
+#10050000
+07
+0;
+19
+#10100000
+08
+1:
+#10150000
+1$
+#11000000
+x*
+bx000 "
+x1
+x#
+bx000 2
+#11050000
+x9
+#11100000
+x:
+#11150000
+x$
+#12000000

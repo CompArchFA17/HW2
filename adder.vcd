@@ -1,0 +1,210 @@
+$date
+	Wed Sep 20 23:47:10 2017
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testFullAdder $end
+$var wire 1 ! Cout $end
+$var wire 1 " carryout $end
+$var wire 1 # structsum $end
+$var wire 1 $ sum $end
+$var reg 1 % a $end
+$var reg 1 & b $end
+$var reg 1 ' carryin $end
+$scope module adder $end
+$var wire 1 ( a $end
+$var wire 1 ) b $end
+$var wire 1 * carryin $end
+$var wire 1 " carryout $end
+$var wire 1 $ sum $end
+$upscope $end
+$scope module structural $end
+$var wire 1 + AandB $end
+$var wire 1 , AxorB $end
+$var wire 1 - CAxorB $end
+$var wire 1 ! Cout $end
+$var wire 1 ( a $end
+$var wire 1 ) b $end
+$var wire 1 * carryin $end
+$var wire 1 # structsum $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+z-
+z,
+z+
+0*
+0)
+0(
+0'
+0&
+0%
+0$
+x#
+0"
+x!
+$end
+#50000
+0-
+0+
+0,
+#100000
+0!
+0#
+#1000000
+1$
+1'
+1*
+#1050000
+1#
+#2000000
+0'
+0*
+1&
+1)
+#2050000
+0#
+1,
+#2100000
+1#
+#3000000
+0$
+1"
+1'
+1*
+#3050000
+0#
+1-
+#3100000
+1!
+#4000000
+0"
+1$
+0'
+0*
+0&
+0)
+1%
+1(
+#4050000
+1#
+0-
+#4100000
+0!
+#5000000
+0$
+1"
+1'
+1*
+#5050000
+0#
+1-
+#5100000
+1!
+#6000000
+0'
+0*
+1&
+1)
+#6050000
+1#
+0-
+0,
+1+
+#6100000
+0#
+#7000000
+1$
+1'
+1*
+#7050000
+1#
+#8000000
+0"
+0$
+0'
+0*
+0&
+0)
+0%
+0(
+#8050000
+0#
+0+
+#8100000
+0!
+#9000000
+1$
+1'
+1*
+#9050000
+1#
+#10000000
+0'
+0*
+1&
+1)
+#10050000
+0#
+1,
+#10100000
+1#
+#11000000
+0$
+1"
+1'
+1*
+#11050000
+0#
+1-
+#11100000
+1!
+#12000000
+0"
+1$
+0'
+0*
+0&
+0)
+1%
+1(
+#12050000
+1#
+0-
+#12100000
+0!
+#13000000
+0$
+1"
+1'
+1*
+#13050000
+0#
+1-
+#13100000
+1!
+#14000000
+0'
+0*
+1&
+1)
+#14050000
+1#
+0-
+0,
+1+
+#14100000
+0#
+#15000000
+1$
+1'
+1*
+#15050000
+1#
+#16000000
