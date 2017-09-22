@@ -25,16 +25,15 @@ The multiplexer is two stages of selectors cascaded together, similar to the dec
 ### Test Bench Output
 ```
 A1 A0 | I0 I1 I2 I3  |  O | Expected Output
-0  0  |  0  1  1  1  |  0 | Input 0
-0  0  |  1  0  0  0  |  1 | Input 0
-0  1  |  1  0  1  1  |  0 | Input 1
-0  1  |  0  1  0  0  |  1 | Input 1
-1  0  |  1  1  0  1  |  0 | Input 2
-1  0  |  0  0  1  0  |  1 | Input 2
-1  1  |  1  1  1  0  |  0 | Input 3
-1  1  |  0  0  0  1  |  1 | Input 3
+0  0  |  0  x  x  x  |  0 | Input 0
+0  0  |  1  x  x  x  |  1 | Input 0
+0  1  |  x  0  x  x  |  0 | Input 1
+0  1  |  x  1  x  x  |  1 | Input 1
+1  0  |  x  x  0  x  |  0 | Input 2
+1  0  |  x  x  1  x  |  1 | Input 2
+1  1  |  x  x  x  0  |  0 | Input 3
+1  1  |  x  x  x  1  |  1 | Input 3
 ```
-Is there a good way to define X as an input for truth-table verification?
 
 ### Waveforms
 ![multiplexer.png](multiplexer.png)
