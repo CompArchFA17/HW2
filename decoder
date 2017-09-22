@@ -1,0 +1,170 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x2378690 .scope module, "testDecoder" "testDecoder" 2 5;
+ .timescale -9 -12;
+v0x23da500_0 .net "Sout0", 0 0, L_0x23db740; 1 drivers
+v0x23da5d0_0 .net "Sout1", 0 0, L_0x23db960; 1 drivers
+v0x23da680_0 .net "Sout2", 0 0, L_0x23dbb80; 1 drivers
+v0x23da730_0 .net "Sout3", 0 0, L_0x23dbdb0; 1 drivers
+v0x23da810_0 .var "addr0", 0 0;
+v0x23da890_0 .var "addr1", 0 0;
+v0x23da960_0 .var "enable", 0 0;
+v0x23daa30_0 .net "out0", 0 0, L_0x23dafb0; 1 drivers
+v0x23dab00_0 .net "out1", 0 0, L_0x23daec0; 1 drivers
+v0x23dab80_0 .net "out2", 0 0, L_0x23dad80; 1 drivers
+v0x23dac60_0 .net "out3", 0 0, L_0x23dace0; 1 drivers
+S_0x23d9d90 .scope module, "decoder" "behavioralDecoder" 2 12, 3 7, S_0x2378690;
+ .timescale -9 -12;
+v0x23d9e80_0 .net *"_s11", 3 0, L_0x23db2b0; 1 drivers
+v0x23d9f40_0 .net *"_s5", 3 0, L_0x23db130; 1 drivers
+v0x23d9fe0_0 .net *"_s8", 2 0, C4<000>; 1 drivers
+v0x23da080_0 .net *"_s9", 1 0, L_0x23db1d0; 1 drivers
+v0x23da100_0 .net "address0", 0 0, v0x23da810_0; 1 drivers
+v0x23da1b0_0 .net "address1", 0 0, v0x23da890_0; 1 drivers
+v0x23da230_0 .net "enable", 0 0, v0x23da960_0; 1 drivers
+v0x23da2e0_0 .alias "out0", 0 0, v0x23daa30_0;
+v0x23da360_0 .alias "out1", 0 0, v0x23dab00_0;
+v0x23da3e0_0 .alias "out2", 0 0, v0x23dab80_0;
+v0x23da460_0 .alias "out3", 0 0, v0x23dac60_0;
+L_0x23dace0 .part L_0x23db2b0, 3, 1;
+L_0x23dad80 .part L_0x23db2b0, 2, 1;
+L_0x23daec0 .part L_0x23db2b0, 1, 1;
+L_0x23dafb0 .part L_0x23db2b0, 0, 1;
+L_0x23db130 .concat [ 1 3 0 0], v0x23da960_0, C4<000>;
+L_0x23db1d0 .concat [ 1 1 0 0], v0x23da810_0, v0x23da890_0;
+L_0x23db2b0 .shift/l 4, L_0x23db130, L_0x23db1d0;
+S_0x2378780 .scope module, "structuraltest" "structuralDecoder" 2 13, 3 18, S_0x2378690;
+ .timescale -9 -12;
+L_0x23db3f0/d .functor NOT 1, v0x23da810_0, C4<0>, C4<0>, C4<0>;
+L_0x23db3f0 .delay (50000,50000,50000) L_0x23db3f0/d;
+L_0x23db520/d .functor NOT 1, v0x23da890_0, C4<0>, C4<0>, C4<0>;
+L_0x23db520 .delay (50000,50000,50000) L_0x23db520/d;
+L_0x23db650/d .functor AND 1, L_0x23db3f0, L_0x23db520, C4<1>, C4<1>;
+L_0x23db650 .delay (50000,50000,50000) L_0x23db650/d;
+L_0x23db740/d .functor AND 1, v0x23da960_0, L_0x23db650, C4<1>, C4<1>;
+L_0x23db740 .delay (50000,50000,50000) L_0x23db740/d;
+L_0x23db8c0/d .functor AND 1, v0x23da810_0, L_0x23db520, C4<1>, C4<1>;
+L_0x23db8c0 .delay (50000,50000,50000) L_0x23db8c0/d;
+L_0x23db960/d .functor AND 1, v0x23da960_0, L_0x23db8c0, C4<1>, C4<1>;
+L_0x23db960 .delay (50000,50000,50000) L_0x23db960/d;
+L_0x23dbae0/d .functor AND 1, L_0x23db3f0, v0x23da890_0, C4<1>, C4<1>;
+L_0x23dbae0 .delay (50000,50000,50000) L_0x23dbae0/d;
+L_0x23dbb80/d .functor AND 1, v0x23da960_0, L_0x23dbae0, C4<1>, C4<1>;
+L_0x23dbb80 .delay (50000,50000,50000) L_0x23dbb80/d;
+L_0x23dbce0/d .functor AND 1, v0x23da810_0, v0x23da890_0, C4<1>, C4<1>;
+L_0x23dbce0 .delay (50000,50000,50000) L_0x23dbce0/d;
+L_0x23dbdb0/d .functor AND 1, v0x23da960_0, L_0x23dbce0, C4<1>, C4<1>;
+L_0x23dbdb0 .delay (50000,50000,50000) L_0x23dbdb0/d;
+v0x23aeec0_0 .net "A0A1", 0 0, L_0x23dbce0; 1 drivers
+v0x23d94a0_0 .net "A0nA1", 0 0, L_0x23db8c0; 1 drivers
+v0x23d9540_0 .alias "Sout0", 0 0, v0x23da500_0;
+v0x23d95e0_0 .alias "Sout1", 0 0, v0x23da5d0_0;
+v0x23d9690_0 .alias "Sout2", 0 0, v0x23da680_0;
+v0x23d9730_0 .alias "Sout3", 0 0, v0x23da730_0;
+v0x23d9810_0 .alias "address0", 0 0, v0x23da100_0;
+v0x23d98b0_0 .alias "address1", 0 0, v0x23da1b0_0;
+v0x23d99a0_0 .alias "enable", 0 0, v0x23da230_0;
+v0x23d9a40_0 .net "nA0A1", 0 0, L_0x23dbae0; 1 drivers
+v0x23d9b40_0 .net "nA0nA1", 0 0, L_0x23db650; 1 drivers
+v0x23d9be0_0 .net "naddress0", 0 0, L_0x23db3f0; 1 drivers
+v0x23d9cf0_0 .net "naddress1", 0 0, L_0x23db520; 1 drivers
+    .scope S_0x2378690;
+T_0 ;
+    %vpi_call 2 17 "$dumpfile", "decoder.vcd";
+    %vpi_call 2 18 "$dumpvars";
+    %vpi_call 2 20 "$display", "Behavioral Decoder";
+    %vpi_call 2 21 "$display", "En A0 A1| O0 O1 O2 O3 | Expected Output";
+    %set/v v0x23da960_0, 0, 1;
+    %set/v v0x23da810_0, 0, 1;
+    %set/v v0x23da890_0, 0, 1;
+    %delay 1000000, 0;
+    %vpi_call 2 23 "$display", "%b  %b  %b |  %b  %b  %b  %b | All false", v0x23da960_0, v0x23da810_0, v0x23da890_0, v0x23daa30_0, v0x23dab00_0, v0x23dab80_0, v0x23dac60_0;
+    %set/v v0x23da960_0, 0, 1;
+    %set/v v0x23da810_0, 1, 1;
+    %set/v v0x23da890_0, 0, 1;
+    %delay 1000000, 0;
+    %vpi_call 2 25 "$display", "%b  %b  %b |  %b  %b  %b  %b | All false", v0x23da960_0, v0x23da810_0, v0x23da890_0, v0x23daa30_0, v0x23dab00_0, v0x23dab80_0, v0x23dac60_0;
+    %set/v v0x23da960_0, 0, 1;
+    %set/v v0x23da810_0, 0, 1;
+    %set/v v0x23da890_0, 1, 1;
+    %delay 1000000, 0;
+    %vpi_call 2 27 "$display", "%b  %b  %b |  %b  %b  %b  %b | All false", v0x23da960_0, v0x23da810_0, v0x23da890_0, v0x23daa30_0, v0x23dab00_0, v0x23dab80_0, v0x23dac60_0;
+    %set/v v0x23da960_0, 0, 1;
+    %set/v v0x23da810_0, 1, 1;
+    %set/v v0x23da890_0, 1, 1;
+    %delay 1000000, 0;
+    %vpi_call 2 29 "$display", "%b  %b  %b |  %b  %b  %b  %b | All false", v0x23da960_0, v0x23da810_0, v0x23da890_0, v0x23daa30_0, v0x23dab00_0, v0x23dab80_0, v0x23dac60_0;
+    %set/v v0x23da960_0, 1, 1;
+    %set/v v0x23da810_0, 0, 1;
+    %set/v v0x23da890_0, 0, 1;
+    %delay 1000000, 0;
+    %vpi_call 2 31 "$display", "%b  %b  %b |  %b  %b  %b  %b | O0 Only", v0x23da960_0, v0x23da810_0, v0x23da890_0, v0x23daa30_0, v0x23dab00_0, v0x23dab80_0, v0x23dac60_0;
+    %set/v v0x23da960_0, 1, 1;
+    %set/v v0x23da810_0, 1, 1;
+    %set/v v0x23da890_0, 0, 1;
+    %delay 1000000, 0;
+    %vpi_call 2 33 "$display", "%b  %b  %b |  %b  %b  %b  %b | O1 Only", v0x23da960_0, v0x23da810_0, v0x23da890_0, v0x23daa30_0, v0x23dab00_0, v0x23dab80_0, v0x23dac60_0;
+    %set/v v0x23da960_0, 1, 1;
+    %set/v v0x23da810_0, 0, 1;
+    %set/v v0x23da890_0, 1, 1;
+    %delay 1000000, 0;
+    %vpi_call 2 35 "$display", "%b  %b  %b |  %b  %b  %b  %b | O2 Only", v0x23da960_0, v0x23da810_0, v0x23da890_0, v0x23daa30_0, v0x23dab00_0, v0x23dab80_0, v0x23dac60_0;
+    %set/v v0x23da960_0, 1, 1;
+    %set/v v0x23da810_0, 1, 1;
+    %set/v v0x23da890_0, 1, 1;
+    %delay 1000000, 0;
+    %vpi_call 2 37 "$display", "%b  %b  %b |  %b  %b  %b  %b | O3 Only", v0x23da960_0, v0x23da810_0, v0x23da890_0, v0x23daa30_0, v0x23dab00_0, v0x23dab80_0, v0x23dac60_0;
+    %vpi_call 2 39 "$display", "Structural Decoder";
+    %vpi_call 2 40 "$display", "En A0 A1| O0 O1 O2 O3 | Expected Output";
+    %set/v v0x23da960_0, 0, 1;
+    %set/v v0x23da810_0, 0, 1;
+    %set/v v0x23da890_0, 0, 1;
+    %delay 1000000, 0;
+    %vpi_call 2 42 "$display", "%b  %b  %b |  %b  %b  %b  %b | All false", v0x23da960_0, v0x23da810_0, v0x23da890_0, v0x23da500_0, v0x23da5d0_0, v0x23da680_0, v0x23da730_0;
+    %set/v v0x23da960_0, 0, 1;
+    %set/v v0x23da810_0, 1, 1;
+    %set/v v0x23da890_0, 0, 1;
+    %delay 1000000, 0;
+    %vpi_call 2 44 "$display", "%b  %b  %b |  %b  %b  %b  %b | All false", v0x23da960_0, v0x23da810_0, v0x23da890_0, v0x23da500_0, v0x23da5d0_0, v0x23da680_0, v0x23da730_0;
+    %set/v v0x23da960_0, 0, 1;
+    %set/v v0x23da810_0, 0, 1;
+    %set/v v0x23da890_0, 1, 1;
+    %delay 1000000, 0;
+    %vpi_call 2 46 "$display", "%b  %b  %b |  %b  %b  %b  %b | All false", v0x23da960_0, v0x23da810_0, v0x23da890_0, v0x23da500_0, v0x23da5d0_0, v0x23da680_0, v0x23da730_0;
+    %set/v v0x23da960_0, 0, 1;
+    %set/v v0x23da810_0, 1, 1;
+    %set/v v0x23da890_0, 1, 1;
+    %delay 1000000, 0;
+    %vpi_call 2 48 "$display", "%b  %b  %b |  %b  %b  %b  %b | All false", v0x23da960_0, v0x23da810_0, v0x23da890_0, v0x23da500_0, v0x23da5d0_0, v0x23da680_0, v0x23da730_0;
+    %set/v v0x23da960_0, 1, 1;
+    %set/v v0x23da810_0, 0, 1;
+    %set/v v0x23da890_0, 0, 1;
+    %delay 1000000, 0;
+    %vpi_call 2 50 "$display", "%b  %b  %b |  %b  %b  %b  %b | O0 Only", v0x23da960_0, v0x23da810_0, v0x23da890_0, v0x23da500_0, v0x23da5d0_0, v0x23da680_0, v0x23da730_0;
+    %set/v v0x23da960_0, 1, 1;
+    %set/v v0x23da810_0, 1, 1;
+    %set/v v0x23da890_0, 0, 1;
+    %delay 1000000, 0;
+    %vpi_call 2 52 "$display", "%b  %b  %b |  %b  %b  %b  %b | O1 Only", v0x23da960_0, v0x23da810_0, v0x23da890_0, v0x23da500_0, v0x23da5d0_0, v0x23da680_0, v0x23da730_0;
+    %set/v v0x23da960_0, 1, 1;
+    %set/v v0x23da810_0, 0, 1;
+    %set/v v0x23da890_0, 1, 1;
+    %delay 1000000, 0;
+    %vpi_call 2 54 "$display", "%b  %b  %b |  %b  %b  %b  %b | O2 Only", v0x23da960_0, v0x23da810_0, v0x23da890_0, v0x23da500_0, v0x23da5d0_0, v0x23da680_0, v0x23da730_0;
+    %set/v v0x23da960_0, 1, 1;
+    %set/v v0x23da810_0, 1, 1;
+    %set/v v0x23da890_0, 1, 1;
+    %delay 1000000, 0;
+    %vpi_call 2 56 "$display", "%b  %b  %b |  %b  %b  %b  %b | O3 Only", v0x23da960_0, v0x23da810_0, v0x23da890_0, v0x23da500_0, v0x23da5d0_0, v0x23da680_0, v0x23da730_0;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "decoder.t.v";
+    "./decoder.v";
