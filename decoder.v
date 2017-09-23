@@ -1,4 +1,6 @@
 // Decoder circuit
+`define AND and #50
+`define NOT not #50
 
 module behavioralDecoder
 (
@@ -17,6 +19,13 @@ module structuralDecoder
     input address0, address1,
     input enable
 );
-    // Your decoder code here
+wire nA0, nA1;
+`NOT notA0(nA0, address0);
+`NOT notA1(nA1, address1);
+`AND outzero(out0, nA1, nA0, enable);
+`AND outzero(out1, nA1, address0, enable);
+`AND outzero(out2, address1, nA0, enable);
+`AND outzero(out3, address1, address0, enable);
+
 endmodule
 
