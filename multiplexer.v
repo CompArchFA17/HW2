@@ -1,4 +1,7 @@
 // Multiplexer circuit
+`define NAND nand #50
+`define OR or #50
+`define NOT not #50
 
 module behavioralMultiplexer
 (
@@ -19,6 +22,15 @@ module structuralMultiplexer
     input address0, address1,
     input in0, in1, in2, in3
 );
-    // Your multiplexer code here
+    wire nA0, nA1;
+    wire out0, out1, out2, out3;
+    `NOT A0inv(nA0, address0); 
+    `NOT A1inv(nA1, address1);
+    `NAND AG0(out0, nA0, nA1, in0);
+    `NAND AG1(out1, address0, nA1, in1);
+    `NAND AG2(out2, address1, nA0, in2);
+    `NAND AG3(out3, address0, address1, in3);
+    `NAND AGT(out, out0, out1, out2, out3);
+
 endmodule
 
