@@ -1,4 +1,7 @@
 // Multiplexer circuit
+`define AND and #50
+`define OR  or #50
+`define NOT not #50
 
 module behavioralMultiplexer
 (
@@ -34,19 +37,19 @@ module structuralMultiplexer
     wire preOut0;
     wire preOut1;
 
-    not #50 not_addr0(notAddr0, address0);
-    not #50 not_addr1(notAddr1, address1);
-    and #50 addr_andgate0(andAddr0, notAddr0, notAddr1);
-    and #50 addr_andgate1(andAddr2, notAddr0, address1);
-    and #50 addr_andgate2(andAddr1, address0, notAddr1);
-    and #50 addr_andgate3(andAddr3, address0, address1);
-    and #50 in0_andgate(postIn0, in0, andAddr0);
-    and #50 in1_andgate(postIn1, in1, andAddr1);
-    and #50 in2_andgate(postIn2, in2, andAddr2);
-    and #50 in3_andgate(postIn3, in3, andAddr3);
-    or #50 orgate1(preOut0, postIn0, postIn1);
-    or #50 orgate2(preOut1, postIn2, postIn3);
-    or #50 orgate3(out, preOut0, preOut1);
+    `NOT not_addr0(notAddr0, address0);
+    `NOT not_addr1(notAddr1, address1);
+    `AND addr_andgate0(andAddr0, notAddr0, notAddr1);
+    `AND addr_andgate1(andAddr2, notAddr0, address1);
+    `AND addr_andgate2(andAddr1, address0, notAddr1);
+    `AND addr_andgate3(andAddr3, address0, address1);
+    `AND in0_andgate(postIn0, in0, andAddr0);
+    `AND in1_andgate(postIn1, in1, andAddr1);
+    `AND in2_andgate(postIn2, in2, andAddr2);
+    `AND in3_andgate(postIn3, in3, andAddr3);
+    `OR  orgate1(preOut0, postIn0, postIn1);
+    `OR  orgate2(preOut1, postIn2, postIn3);
+    `OR  orgate3(out, preOut0, preOut1);
 
 endmodule
 
