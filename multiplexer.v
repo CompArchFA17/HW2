@@ -1,7 +1,11 @@
 // define gates with delays
+
 `define AND and #50
 `define OR or #50
 `define NOT not #50
+`define NAND nand #50
+`define NOR nor #50
+`define XOR xor #50
 
 // Multiplexer circuit
 
@@ -33,22 +37,8 @@ and getin1(in1, naddr1, addr0);
 and getin2(in2, addr1, naddr0);
 and getin3(in3, addr1, addr0);
 
-// getting the nin0 nin1, nin2, and nin3 values just in case
-not getnin0(nin0, in0);
-not getnin1(nin1, in1);
-not getnin2(nin2, in2);
-not getnin3(nin3, in3);
-
-// getting values to pass into output orgate
-and geto1(and1, in0, in1);
-and geto2(and2, in2, in3);
-
-
-
-
-
-// Still unsure about how to get out value. and -> the 1s become Xs. or -> 0s
-// become Xs
+//Getting the output:
+or getoutput(out, in0, in1, in2, in3);
 
 
 endmodule
