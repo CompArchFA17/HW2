@@ -1,0 +1,170 @@
+#! /usr/local/bin/vvp
+:ivl_version "0.10.0 (devel)" "(s20150513)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x1403770 .scope module, "behavioralFullAdder" "behavioralFullAdder" 2 3;
+ .timescale -9 -12;
+    .port_info 0 /OUTPUT 1 "sum"
+    .port_info 1 /OUTPUT 1 "carryout"
+    .port_info 2 /INPUT 1 "a"
+    .port_info 3 /INPUT 1 "b"
+    .port_info 4 /INPUT 1 "carryin"
+L_0x7fa5783d5060 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x1404ad0_0 .net *"_s10", 0 0, L_0x7fa5783d5060;  1 drivers
+v0x1429a50_0 .net *"_s11", 1 0, L_0x142c410;  1 drivers
+v0x1429b30_0 .net *"_s13", 1 0, L_0x142c620;  1 drivers
+L_0x7fa5783d50a8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x1429c20_0 .net *"_s16", 0 0, L_0x7fa5783d50a8;  1 drivers
+v0x1429d00_0 .net *"_s17", 1 0, L_0x142c750;  1 drivers
+v0x1429e30_0 .net *"_s3", 1 0, L_0x142c170;  1 drivers
+L_0x7fa5783d5018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x1429f10_0 .net *"_s6", 0 0, L_0x7fa5783d5018;  1 drivers
+v0x1429ff0_0 .net *"_s7", 1 0, L_0x142c290;  1 drivers
+o0x7fa57841e198 .functor BUFZ 1, C4<z>; HiZ drive
+v0x142a0d0_0 .net "a", 0 0, o0x7fa57841e198;  0 drivers
+o0x7fa57841e1c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x142a220_0 .net "b", 0 0, o0x7fa57841e1c8;  0 drivers
+o0x7fa57841e1f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x142a2e0_0 .net "carryin", 0 0, o0x7fa57841e1f8;  0 drivers
+v0x142a3a0_0 .net "carryout", 0 0, L_0x142bfe0;  1 drivers
+v0x142a460_0 .net "sum", 0 0, L_0x142c080;  1 drivers
+L_0x142bfe0 .part L_0x142c750, 1, 1;
+L_0x142c080 .part L_0x142c750, 0, 1;
+L_0x142c170 .concat [ 1 1 0 0], o0x7fa57841e198, L_0x7fa5783d5018;
+L_0x142c290 .concat [ 1 1 0 0], o0x7fa57841e1c8, L_0x7fa5783d5060;
+L_0x142c410 .arith/sum 2, L_0x142c170, L_0x142c290;
+L_0x142c620 .concat [ 1 1 0 0], o0x7fa57841e1f8, L_0x7fa5783d50a8;
+L_0x142c750 .arith/sum 2, L_0x142c410, L_0x142c620;
+S_0x1404950 .scope module, "testFullAdder" "testFullAdder" 3 10;
+ .timescale -9 -12;
+v0x142bb10_0 .var "a", 0 0;
+v0x142bc00_0 .var "b", 0 0;
+v0x142bd10_0 .var "carryin", 0 0;
+v0x142be00_0 .net "carryout", 0 0, L_0x142cde0;  1 drivers
+v0x142bea0_0 .net "sum", 0 0, L_0x142cb90;  1 drivers
+S_0x142a5c0 .scope module, "dut" "structuralFullAdder" 3 14, 2 25 0, S_0x1404950;
+ .timescale -9 -12;
+    .port_info 0 /OUTPUT 1 "sum"
+    .port_info 1 /OUTPUT 1 "carryout"
+    .port_info 2 /INPUT 1 "a"
+    .port_info 3 /INPUT 1 "b"
+    .port_info 4 /INPUT 1 "carryin"
+L_0x142cde0/d .functor OR 1, L_0x142c910, L_0x142cc90, C4<0>, C4<0>;
+L_0x142cde0 .delay 1 (50000,50000,50000) L_0x142cde0/d;
+v0x142b460_0 .net "a", 0 0, v0x142bb10_0;  1 drivers
+v0x142b520_0 .net "b", 0 0, v0x142bc00_0;  1 drivers
+v0x142b5f0_0 .net "c1", 0 0, L_0x142c910;  1 drivers
+v0x142b6f0_0 .net "c2", 0 0, L_0x142cc90;  1 drivers
+v0x142b7c0_0 .net "carryin", 0 0, v0x142bd10_0;  1 drivers
+v0x142b8b0_0 .net "carryout", 0 0, L_0x142cde0;  alias, 1 drivers
+v0x142b950_0 .net "s1", 0 0, L_0x142c510;  1 drivers
+v0x142ba40_0 .net "sum", 0 0, L_0x142cb90;  alias, 1 drivers
+S_0x142a7e0 .scope module, "a1" "myHalfAdder" 2 36, 2 15 0, S_0x142a5c0;
+ .timescale -9 -12;
+    .port_info 0 /OUTPUT 1 "sum"
+    .port_info 1 /OUTPUT 1 "carryout"
+    .port_info 2 /INPUT 1 "a"
+    .port_info 3 /INPUT 1 "b"
+L_0x142c510/d .functor XOR 1, v0x142bb10_0, v0x142bc00_0, C4<0>, C4<0>;
+L_0x142c510 .delay 1 (50000,50000,50000) L_0x142c510/d;
+L_0x142c910/d .functor AND 1, v0x142bb10_0, v0x142bc00_0, C4<1>, C4<1>;
+L_0x142c910 .delay 1 (50000,50000,50000) L_0x142c910/d;
+v0x142aa70_0 .net "a", 0 0, v0x142bb10_0;  alias, 1 drivers
+v0x142ab50_0 .net "b", 0 0, v0x142bc00_0;  alias, 1 drivers
+v0x142ac10_0 .net "carryout", 0 0, L_0x142c910;  alias, 1 drivers
+v0x142ace0_0 .net "sum", 0 0, L_0x142c510;  alias, 1 drivers
+S_0x142ae50 .scope module, "a2" "myHalfAdder" 2 37, 2 15 0, S_0x142a5c0;
+ .timescale -9 -12;
+    .port_info 0 /OUTPUT 1 "sum"
+    .port_info 1 /OUTPUT 1 "carryout"
+    .port_info 2 /INPUT 1 "a"
+    .port_info 3 /INPUT 1 "b"
+L_0x142cb90/d .functor XOR 1, L_0x142c510, v0x142bd10_0, C4<0>, C4<0>;
+L_0x142cb90 .delay 1 (50000,50000,50000) L_0x142cb90/d;
+L_0x142cc90/d .functor AND 1, L_0x142c510, v0x142bd10_0, C4<1>, C4<1>;
+L_0x142cc90 .delay 1 (50000,50000,50000) L_0x142cc90/d;
+v0x142b0b0_0 .net "a", 0 0, L_0x142c510;  alias, 1 drivers
+v0x142b180_0 .net "b", 0 0, v0x142bd10_0;  alias, 1 drivers
+v0x142b220_0 .net "carryout", 0 0, L_0x142cc90;  alias, 1 drivers
+v0x142b2f0_0 .net "sum", 0 0, L_0x142cb90;  alias, 1 drivers
+    .scope S_0x1404950;
+T_0 ;
+    %vpi_call 3 17 "$dumpfile", "adder.vcd" {0 0 0};
+    %vpi_call 3 18 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x1404950 {0 0 0};
+    %vpi_call 3 19 "$display", "a | b | carryin | carryout | carryout expected | sum | sum expected | " {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x142bb10_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x142bc00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x142bd10_0, 0, 1;
+    %delay 200000, 0;
+    %vpi_call 3 21 "$display", "%b | %b | %b       | %b        | %s                 | %b   | %s            | ", v0x142bb10_0, v0x142bc00_0, v0x142bd10_0, v0x142be00_0, "0", v0x142bea0_0, "0" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x142bb10_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x142bc00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x142bd10_0, 0, 1;
+    %delay 200000, 0;
+    %vpi_call 3 23 "$display", "%b | %b | %b       | %b        | %s                 | %b   | %s            | ", v0x142bb10_0, v0x142bc00_0, v0x142bd10_0, v0x142be00_0, "0", v0x142bea0_0, "1" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x142bb10_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x142bc00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x142bd10_0, 0, 1;
+    %delay 200000, 0;
+    %vpi_call 3 25 "$display", "%b | %b | %b       | %b        | %s                 | %b   | %s            | ", v0x142bb10_0, v0x142bc00_0, v0x142bd10_0, v0x142be00_0, "0", v0x142bea0_0, "1" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x142bb10_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x142bc00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x142bd10_0, 0, 1;
+    %delay 200000, 0;
+    %vpi_call 3 27 "$display", "%b | %b | %b       | %b        | %s                 | %b   | %s            | ", v0x142bb10_0, v0x142bc00_0, v0x142bd10_0, v0x142be00_0, "1", v0x142bea0_0, "0" {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x142bb10_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x142bc00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x142bd10_0, 0, 1;
+    %delay 200000, 0;
+    %vpi_call 3 29 "$display", "%b | %b | %b       | %b        | %s                 | %b   | %s            | ", v0x142bb10_0, v0x142bc00_0, v0x142bd10_0, v0x142be00_0, "0", v0x142bea0_0, "1" {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x142bb10_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x142bc00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x142bd10_0, 0, 1;
+    %delay 200000, 0;
+    %vpi_call 3 31 "$display", "%b | %b | %b       | %b        | %s                 | %b   | %s            | ", v0x142bb10_0, v0x142bc00_0, v0x142bd10_0, v0x142be00_0, "1", v0x142bea0_0, "0" {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x142bb10_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x142bc00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x142bd10_0, 0, 1;
+    %delay 200000, 0;
+    %vpi_call 3 33 "$display", "%b | %b | %b       | %b        | %s                 | %b   | %s            | ", v0x142bb10_0, v0x142bc00_0, v0x142bd10_0, v0x142be00_0, "1", v0x142bea0_0, "0" {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x142bb10_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x142bc00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x142bd10_0, 0, 1;
+    %delay 200000, 0;
+    %vpi_call 3 35 "$display", "%b | %b | %b       | %b        | %s                 | %b   | %s            | ", v0x142bb10_0, v0x142bc00_0, v0x142bd10_0, v0x142be00_0, "1", v0x142bea0_0, "1" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "./adder.v";
+    "adder.t.v";

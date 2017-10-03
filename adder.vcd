@@ -1,0 +1,107 @@
+$date
+	Thu Sep 21 20:51:58 2017
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testFullAdder $end
+$var wire 1 ! sum $end
+$var wire 1 " carryout $end
+$var reg 1 # a $end
+$var reg 1 $ b $end
+$var reg 1 % carryin $end
+$scope module dut $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 % carryin $end
+$var wire 1 " carryout $end
+$var wire 1 ! sum $end
+$var wire 1 & s1 $end
+$var wire 1 ' c2 $end
+$var wire 1 ( c1 $end
+$scope module a1 $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 ( carryout $end
+$var wire 1 & sum $end
+$upscope $end
+$scope module a2 $end
+$var wire 1 & a $end
+$var wire 1 % b $end
+$var wire 1 ' carryout $end
+$var wire 1 ! sum $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x(
+x'
+x&
+0%
+0$
+0#
+x"
+x!
+$end
+#50000
+0'
+0(
+0&
+#100000
+0"
+0!
+#200000
+1%
+#250000
+1!
+#400000
+0%
+1$
+#450000
+0!
+1&
+#500000
+1!
+#600000
+1%
+#650000
+0!
+1'
+#700000
+1"
+#800000
+0%
+0$
+1#
+#850000
+1!
+0'
+#900000
+0"
+#1000000
+1%
+#1050000
+0!
+1'
+#1100000
+1"
+#1200000
+0%
+1$
+#1250000
+1!
+0'
+0&
+1(
+#1300000
+0!
+#1400000
+1%
+#1450000
+1!
+#1600000
