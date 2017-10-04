@@ -1,4 +1,7 @@
 // Multiplexer circuit
+`define Not not #50
+`define Nand nand #50
+`define Or or #50
 
 module behavioralMultiplexer
 (
@@ -13,12 +16,33 @@ module behavioralMultiplexer
 endmodule
 
 
-module structuralMultiplexer
+module structM
 (
     output out,
-    input address0, address1,
+    input S0, S1,
     input in0, in1, in2, in3
 );
-    // Your multiplexer code here
+    
+    wire nS0; 
+    wire nS1; 
+
+    wire out0; 
+    wire out1; 
+    wire out2; 
+    wire out3; 
+
+
+    `Not S0inv(nS0, S0);
+    `Not S1inv(nS1, S1);
+
+    `Nand n0(out0, nS0, nS1, in0);
+    `Nand n1(out1, S0,  nS1, in1);
+    `Nand n2(out2, nS0, S1, in2);
+    `Nand n3(out3, S0,  S1, in3);
+
+    `Nand addthem(out, out0, out1, out2, out3);
+
+
 endmodule
+
 
